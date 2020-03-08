@@ -1,0 +1,67 @@
+<title>이유식봇 편극광 비경수위 그래프</title>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142320704-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142320704-2');
+</script>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8;"/>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="graph.js"></script>
+<script type="text/javascript" src="dateset.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<center>
+
+<div id="chart_div"></div>   
+<div class="alert alert-dark" role="alert">
+    <h4 class="alert-heading">예상 컷</h4>
+    <p>예상 컷은 n%의 경우, n%가 있는 값의 앞 뒤값을 기준으로 선형으로 n.5%의 값을 계산합니다.</p>
+    <hr>
+    <div style="display:inline">5% : </div><div id="p5" style="display:inline"></div><br>
+    <div style="display:inline">10% : </div><div id="p10" style="display:inline"></div><br>
+    <div style="display:inline">20% : </div><div id="p20" style="display:inline"></div><br>
+    <div style="display:inline">30% : </div><div id="p30" style="display:inline"></div><br>
+    <div style="display:inline">40% : </div><div id="p40" style="display:inline"></div><br>
+    <div style="display:inline">50% : </div><div id="p50" style="display:inline"></div>
+</div>
+<p>
+<button type="button" class="btn btn-outline-primary" id="prev" onclick="prevCheck();drawBasic();">이전 일자</button>
+<button type="button" class="btn btn-outline-success" id="next" onclick="nextCheck();drawBasic();">다음 일자</button>
+</p>
+
+<p>
+<div class="btn-group" role="group" aria-label="makers">
+    <button type="button" class="btn btn-warning" onclick="window.open('https://pf.kakao.com/_SQLbj')">카카오톡 이유식봇</button>
+    <button type="button" class="btn btn-primary" onclick="window.open('https://gall.dcinside.com/mgallery/board/view?id=micateam&no=1446395')">소녀전선 알리미</button>
+</div>
+</p>
+
+<p>
+<img src="https://media.discordapp.net/attachments/606996488048082947/685211616035471524/viewimage.png?width=717&height=282"><br>
+<a href="https://gall.dcinside.com/mgallery/board/view/?id=micateam&no=1403963">출처</a>
+</p>
+
+<div class="alert alert-success" role="alert" id="updatetime"></div>
+
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">안내</h4>
+    <p>데이터는 15분마다 업데이트 됩니다.<br>다음 날 정보는 오전 5시부터 열람 가능합니다.</p>
+    <hr>
+    <p class="mb-0">사이트 오류 발생 시, <a href="mailto:iwsbot148@gmail.com">iwsbot148@gmail.com</a>으로 메일을 보내주시거나, <a href="https://discordapp.com/invite/kkXDudB">이유식봇 디스코드 서포트 서버</a>로 연락주세요.</p>
+</div>
+
+
+
+</center>
+
+<div id="year" style="display:none">2020</div>
+<div id="month" style="display:none">03</div> 
+<div id="day" style="display:none">06</div>  
